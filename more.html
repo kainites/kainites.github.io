@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=VT323&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>KY'S WORLD</title>
+    <link rel="icon" type="image/x-icon" href="img/images.jpeg">
+    <link id="theme" rel="stylesheet" 
+          type="text/css" href="css/game.css"/>
+</head>
+<body>
+
+<!-- nav -->
+    <nav>
+        <a href="index.html">KY'S WORLD</a>
+        <a href="about.html">about</a>
+        <a href="portfolio.html">portfolio</a>
+        <a href="projects.html">projects</a>
+        <a href="#skills">skills</a>
+        <a href="more.html">more</a>
+        <button id="themeButton" onclick="toggleTheme()" 
+        style="background-image: url('/img/gameButton.jpg'); 
+               background-size: cover; 
+               background-repeat: no-repeat; 
+               width: 4em; 
+               height: 4em;">Switch</button>
+    </nav>
+
+
+<!-- main -->
+    <div id="stage">
+        <div id="reversible" class="container">
+            <div class="item">
+                <h3>ABOUT</h3>
+            </div>
+            <div class="item">
+                <h3>EXPERIENCE & EDUCATION</h3>
+            </div>
+            <div class="item">
+                <h3>PROJECTS</h3>
+            </div>
+            <div id="skills" class="item">
+                <h3>SKILLS</h3>
+            </div>
+            <div class="item">
+                <h3>MORE</h3>
+            </div>
+        </div>
+    </div>
+
+<!-- visual novel character -->
+    <div class="character">
+        <div class="icon">
+            <img src="/img/images.jpeg">
+        </div>
+        <div class="name">
+            <h2>KY FOO</h2>
+        </div>
+        <div class="speech">
+            Hi there :)
+        </div>
+    </div>
+
+<!-- scripts -->
+    <script type="text/javascript">
+        sessionStorage.setItem('currentPage', 'more');
+    </script>
+    <script id="themeScript" src="js/game.js"></script>
+    <script id="initialScript" src="js/initial.js"></script>
+</body>
+</html>

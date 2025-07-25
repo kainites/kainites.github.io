@@ -26,7 +26,6 @@
 <!-- nav -->
     <nav>
         <a href="index.html">KY'S WORLD</a>
-        <a href="about.html">about</a>
         <a href="portfolio.html">portfolio</a>
         <a href="projects.html">projects</a>
         <a href="more.html">more</a>
@@ -45,9 +44,9 @@
 
 <!-- main -->
     <div id="stage">
-        <div id="reversible" class="container">
+        <div id="reversible" class="container" style="flex-direction: column-reverse;">
             <div class="item">
-                <h3>ABOUT</h3>
+                <h3>ABOUT ME</h3>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
                 Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
                 Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
@@ -72,8 +71,8 @@
                 Exercitationem quod eaque ipsum voluptas tenetur velit, optio animi minus?
                 Ipsa, ullam error necessitatibus corporis dolore excepturi officia eveniet neque!
             </div>
-            <div class="item">
-                <h3>PROJECTS</h3>
+            <div id="skills" class="item">
+                <h3>SKILLS</h3>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
                 Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
                 Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
@@ -85,8 +84,8 @@
                 Exercitationem quod eaque ipsum voluptas tenetur velit, optio animi minus?
                 Ipsa, ullam error necessitatibus corporis dolore excepturi officia eveniet neque!
             </div>
-            <div id="skills" class="item">
-                <h3>SKILLS</h3>
+            <div class="item">
+                <h3>PROJECTS</h3>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
                 Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
                 Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
@@ -123,14 +122,10 @@
     </div>
 
 <!-- scripts -->
-    <script id="initialScript" src="js/initial.js"></script>
-    <script id="themeScript" src="js/game.js"></script>
     <script type="text/javascript">
-        window.onload = function () {
-            setTimeout(function() {
-                document.getElementById("body").style.display = "";        
-            }, 200);
-        }
+        sessionStorage.setItem('currentPage', 'index');
     </script>
+    <script id="themeScript" src="js/game.js"></script>
+    <script id="initialScript" src="js/initial.js"></script>
 </body>
 </html>

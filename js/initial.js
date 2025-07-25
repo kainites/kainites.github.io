@@ -1,9 +1,6 @@
-// scroll from bottom initially
-sessionStorage.setItem('scrollPosition', document.body.scrollHeight);
-
-
 // start scrolling from where last left off
-const scrollPosition = sessionStorage.getItem('scrollPosition');
+let currPage = sessionStorage.getItem('currentPage');
+let scrollPosition = sessionStorage.getItem(`${currPage}ScrollPosition`);
 
 if (scrollPosition) {
     window.onload = window.scrollTo(0, parseInt(scrollPosition));
@@ -11,7 +8,7 @@ if (scrollPosition) {
     
 // save scroll position
 window.addEventListener('scroll', function() {
-    sessionStorage.setItem('scrollPosition', window.scrollY);
+    sessionStorage.setItem(`${currPage}ScrollPosition`, window.scrollY);
 });
 
 document.addEventListener("DOMContentLoaded", function () {

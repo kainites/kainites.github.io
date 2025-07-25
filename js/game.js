@@ -18,17 +18,19 @@ if (!sessionStorage.getItem('splashShown')) {
 
     // set theme to game mode automatically for first time
     sessionStorage.setItem('theme', 'game');
+    
+    // scroll from bottom initially
+    sessionStorage.setItem('indexScrollPosition', document.body.scrollHeight);
 }
 window.addEventListener('load', function() {
   const preloader = document.getElementById('preloader');
-  const content = document.getElementById('content');
 
-  // Fade out the preloader (optional, for smoother transition)
+  // fade out the preloader 
   preloader.style.opacity = '0';
   setTimeout(() => {
     preloader.classList.add('fade-out'); 
-    preloader.style.display = 'none';// Show main content
-  }, 500); // Wait for fade-out animation (adjust as needed)
+    preloader.style.display = 'none';
+  }, 500); 
 });
 
 // change theme
