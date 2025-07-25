@@ -1,1 +1,136 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=VT323&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>KY'S WORLD</title>
+    <link rel="icon" type="image/x-icon" href="img/images.jpeg">
+    <link id="theme" rel="stylesheet" 
+          type="text/css" href="css/game.css"/>
+</head>
+<body>
+<!-- splash -->
+    <div id="splashscreen">
+    <h2>Welcome to</h2>
+    <h1>KY'S WORLD</h1>
+    
+    <img src="http://i.telegraph.co.uk/multimedia/archive/02182/kitten_2182000b.jpg" />
+
+    <a href="#" class="enter"><img src='/img/images.jpeg'/></a>
+
+    <!-- just add an image and click anywhere to start? -->
+    </div>
+
+<!-- nav -->
+    <nav>
+        <a href="index.html">KY'S WORLD</a>
+        <a href="about.html">about</a>
+        <a href="portfolio.html">portfolio</a>
+        <a href="projects.html">projects</a>
+        <a href="more.html">more</a>
+        <button id="themeButton" onclick="toggleTheme()" 
+        style="background-image: url('/img/gameButton.jpg'); 
+               background-size: cover; 
+               background-repeat: no-repeat; 
+               width: 4em; 
+               height: 4em;">Switch</button>
+    </nav>
+
+<div id="preloader">
+  <!-- Loading content goes here (e.g., text, spinner, image) -->
+  <div class="spinner"></div>
+</div>
+
+<!-- main -->
+    <div id="stage">
+        <div id="reversible" class="container">
+            <div class="item">
+                <h3>ABOUT</h3>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
+                Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
+                Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
+                Sapiente perferendis sed laboriosam consequuntur eum sequi quasi non quos!
+                Facilis libero quis atque aliquid distinctio non delectus laboriosam minima?
+                Nemo quasi quos culpa soluta? Ad fugit velit incidunt corrupti.
+                Incidunt corrupti consequatur suscipit repellendus obcaecati nam sed? Illum, iste?
+                Est provident ratione quibusdam perspiciatis illo placeat accusamus deserunt iste!
+                Exercitationem quod eaque ipsum voluptas tenetur velit, optio animi minus?
+                Ipsa, ullam error necessitatibus corporis dolore excepturi officia eveniet neque!
+            </div>
+            <div class="item">
+                <h3>EXPERIENCE & EDUCATION</h3>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
+                Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
+                Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
+                Sapiente perferendis sed laboriosam consequuntur eum sequi quasi non quos!
+                Facilis libero quis atque aliquid distinctio non delectus laboriosam minima?
+                Nemo quasi quos culpa soluta? Ad fugit velit incidunt corrupti.
+                Incidunt corrupti consequatur suscipit repellendus obcaecati nam sed? Illum, iste?
+                Est provident ratione quibusdam perspiciatis illo placeat accusamus deserunt iste!
+                Exercitationem quod eaque ipsum voluptas tenetur velit, optio animi minus?
+                Ipsa, ullam error necessitatibus corporis dolore excepturi officia eveniet neque!
+            </div>
+            <div class="item">
+                <h3>PROJECTS</h3>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
+                Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
+                Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
+                Sapiente perferendis sed laboriosam consequuntur eum sequi quasi non quos!
+                Facilis libero quis atque aliquid distinctio non delectus laboriosam minima?
+                Nemo quasi quos culpa soluta? Ad fugit velit incidunt corrupti.
+                Incidunt corrupti consequatur suscipit repellendus obcaecati nam sed? Illum, iste?
+                Est provident ratione quibusdam perspiciatis illo placeat accusamus deserunt iste!
+                Exercitationem quod eaque ipsum voluptas tenetur velit, optio animi minus?
+                Ipsa, ullam error necessitatibus corporis dolore excepturi officia eveniet neque!
+            </div>
+            <div id="skills" class="item">
+                <h3>SKILLS</h3>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, accusantium?
+                Suscipit odio consectetur amet aliquid sunt nostrum doloribus at dolor?
+                Eaque minus eligendi quibusdam. Numquam nobis veniam minima fugit delectus.
+                Sapiente perferendis sed laboriosam consequuntur eum sequi quasi non quos!
+                Facilis libero quis atque aliquid distinctio non delectus laboriosam minima?
+                Nemo quasi quos culpa soluta? Ad fugit velit incidunt corrupti.
+                Incidunt corrupti consequatur suscipit repellendus obcaecati nam sed? Illum, iste?
+                Est provident ratione quibusdam perspiciatis illo placeat accusamus deserunt iste!
+                Exercitationem quod eaque ipsum voluptas tenetur velit, optio animi minus?
+                Ipsa, ullam error necessitatibus corporis dolore excepturi officia eveniet neque!
+            </div>
+            <div class="item">
+                <h3>MORE</h3>
+                I'm a keen volunteer, some of my past efforts include: 
+                - 
+                -
+                -
+                i do other things as well! like photography and writing :)
+            </div>
+        </div>
+    </div>
+
+<!-- visual novel character -->
+    <div class="character" id="indexVn">
+        <div class="icon">
+            <img src="/img/images.jpeg">
+        </div>
+        <div class="name">
+            <h2>KY FOO</h2>
+        </div>
+        <div class="speech" id="indexSpeech">
+            Hi :)
+        </div>
+    </div>
+
+<!-- scripts -->
+    <script id="initialScript" src="js/initial.js"></script>
+    <script id="themeScript" src="js/game.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function() {
+                document.getElementById("body").style.display = "";        
+            }, 200);
+        }
+    </script>
+</body>
+</html>
