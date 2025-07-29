@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, parseInt(scrollPosition));
     if (!currTheme) currTheme = 'game';
     theme.setAttribute('href', `css/${currTheme}.css`);
-    toggle.setAttribute('style', `background-image: url(/img/${currTheme}Button.jpeg); 
+    toggle.setAttribute('style', `background-image: url(/img/${currTheme}Button.jpg); 
                background-size: cover; 
                background-repeat: no-repeat; 
                width: 4em; 

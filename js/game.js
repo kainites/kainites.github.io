@@ -1,9 +1,8 @@
-// add a splash screen to appear on first load
-const splash = document.getElementById('splashscreen');
-const enterLink = document.querySelector('.enter');
-
 // track if starter page has already been seen or no
 if (!sessionStorage.getItem('splashShown')) {
+    // add a splash screen to appear on first load
+    const splash = document.getElementById('splashscreen');
+    const enterLink = document.querySelector('.enter');
     splash.style.display = 'block';
     sessionStorage.setItem('splashShown', 'true');
     enterLink.addEventListener('click', function (e) {
@@ -22,6 +21,7 @@ if (!sessionStorage.getItem('splashShown')) {
     // scroll from bottom initially
     sessionStorage.setItem('indexScrollPosition', document.body.scrollHeight);
 }
+
 window.addEventListener('load', function() {
   const preloader = document.getElementById('preloader');
 
@@ -45,8 +45,8 @@ function toggleTheme() {
     toggle.setAttribute('style', `background-image: url(/img/lightButton.jpg); 
                background-size: cover; 
                background-repeat: no-repeat; 
-               width: 5em; 
-               height: 5em;")`);
+               width: 4em; 
+               height: 4em;")`);
     const newScript = document.createElement('script');
     newScript.src = 'js/basic.js';
     newScript.id = 'themeScript';
@@ -54,7 +54,9 @@ function toggleTheme() {
 }
 
 // typewriter for visual novel character
-class TypeWriter {
+if (typeof window.TypeWriter == 'undefined') {
+
+window.TypeWriter = class {
     constructor(targetElement, lines, options = {}) {
         this.target = targetElement;
         this.lines = lines;
@@ -106,20 +108,25 @@ class TypeWriter {
         }
     }
 }
+}
 
-// typewriter objects
-const indexTypewriter = new TypeWriter(
-    document.getElementById('indexSpeech'), // speech elem
-    ['My name is KY, welcome to my world! I\'m a student coder and creative based in London and Singapore. I love looking and making pretty things,',
-     'This site acts both as my personal site as well as my portfolio',
-     'As you can see, standing on this text box, there\'s a mini me you can use to explore my world. Use WASD or arrow keys to move around.',
-     'Alternatively, if you\'d like to switch off game mode, you can do so by clicking the icon in the top right corner of the nav bar.'
-    ],  // lines to type
-    {
-        speed: 60,                          // (optional) typing speed in ms
-        hideOnCompleteSelector: '#indexVn', // (optional) hide this element when done
-        onFinish: () => {
-            console.log('Typing finished!');
+if (typeof window.indexTypewriter == 'undefined') {
+
+    // typewriter objects
+    window.indexTypewriter = new window.TypeWriter(
+        document.getElementById('indexSpeech'), // speech elem
+        ['My name is KY, welcome to my world! I\'m a student coder and creative based in London and Singapore. I love looking and making pretty things,',
+        'This site acts both as my personal site as well as my portfolio',
+        'As you can see, standing on this text box, there\'s a mini me you can use to explore my world. Use WASD or arrow keys to move around.',
+        'Alternatively, if you\'d like to switch off game mode, you can do so by clicking the icon in the top right corner of the nav bar.'
+        ],  // lines to type
+        {
+            speed: 60,                          // (optional) typing speed in ms
+            hideOnCompleteSelector: '#indexVn', // (optional) hide this element when done
+            onFinish: () => {
+                console.log('Typing finished!');
+            }
         }
-    }
-);
+    );
+
+}
