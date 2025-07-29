@@ -17,7 +17,7 @@ function toggleTheme() {
         // go to game mode if dark
         sessionStorage.setItem('theme', 'game')
         theme.setAttribute('href', 'css/game.css');
-        toggle.setAttribute('style', `background-image: url(/img/gameButton.jpg)
+        toggle.setAttribute('style', `background-image: url(/img/gameButton.jpg);
                background-size: cover; 
                background-repeat: no-repeat; 
                width: 4em; 
