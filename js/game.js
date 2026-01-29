@@ -2,7 +2,7 @@
 if (!sessionStorage.getItem('splashShown')) {
     // add a splash screen to appear on first load
     const splash = document.getElementById('splashscreen');
-    const enterLink = document.querySelector('.enter');
+    const enterLink = document.querySelector('#enter');
     splash.style.display = 'block';
     sessionStorage.setItem('splashShown', 'true');
     enterLink.addEventListener('click', function (e) {
