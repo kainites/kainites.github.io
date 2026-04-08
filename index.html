@@ -3,7 +3,6 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=VT323&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <title>KY'S WORLD</title>
     <link rel="icon" type="image/x-icon" href="img/images.jpeg">
@@ -13,11 +12,16 @@
 <body>
 <!-- splash -->
     <div id="splashscreen">
-    <h2>Welcome to</h2>
-    <h1>KY's World</h1>
-    <h3>I'm a coder, designer, and organiser of stuff</h3>
-
-    <a href="#" id="enter">Enter the world!</a>
+        <div class="splashx">
+            <div>
+                <h2>Welcome to</h2>
+                <h1>KY's Universe</h1>
+                <h3>I'm a coder, designer, and organiser of stuff.</h3>
+            </div>
+            <div>
+                <a href="#" id="enter">Enter here!</a>
+            </div>
+        </div>
 
     <!-- just add an image and click anywhere to start? -->
     </div>
@@ -25,21 +29,16 @@
 <!-- nav -->
     <nav>
         <a href="/cv.pdf">cv</a>
+        <!-- <a href="misc.html">misc</a> -->
         <a href="projects.html">projects</a>
-        <a href="more.html">more</a>
         <a href="index.html">home</a>
-        <button id="themeButton" onclick="toggleTheme()" 
+        <!-- <button id="themeButton" onclick="toggleTheme()" 
         style="background-image: url('/img/gameButton.jpg'); 
                background-size: cover; 
                background-repeat: no-repeat; 
                width: 4em; 
-               height: 4em;">Switch</button>
+               height: 4em;">Switch</button> -->
     </nav>
-
-<div id="preloader">
-  <!-- Loading content goes here (e.g., text, spinner, image) -->
-  <div class="spinner"></div>
-</div>
 
 <!-- main -->
     <div id="stage">
@@ -47,23 +46,30 @@
         <br>
         <br>
 
-        I'm currently studying Computing at Imperial in London. I have a passion for design, art, writing, and making the world a cooler place one day at a time. 
+        A current Computing student at Imperial College London, I have a passion for design, art, photography, writing and making the world a cooler place one day at a time. 
         <br>
         <br>
 
-        If you ever see me, I'll almost definitely have my headphones on. Most of my time is spent thinking about music, listening to music, or writing about music. I've got a music blog and play the bass, and am currently working on a third secret thing that is probably more exciting than both of those. 
+        If you ever see me, I'll almost definitely have my headphones on. Most of my time is spent thinking about music, listening to music, or writing about music. I've got a <a href="https://kyaac.substack.com/">music blog</a> and am learning to play the bass, and am currently working on a third secret thing that is (probably) more exciting than both of those. 
         <br>
         <br>
 
-        Other things I do include organising events, making art and reading books. I'm currently reading Is A River Alive? by Robert Macfarlane and The Unbearable Lightness of Being by Milan Kundera. 
+        Other things I do include organising events, designing playing cards, and reading books. I'm currently reading Is A River Alive? by Robert Macfarlane and Small Bodies of Water by Nina Mingya-Powles. 
         <br>
         <br>
 
-        A big fan of doing things badly but doing them regardless; I'll always do it for the love of the game. I'm happy you're here. 
+        A big fan of doing things badly but doing them regardless; I'll always do it for the love of the game. <a href="bonus.html">I'm happy you're here</a>. 
+        <br>
+        <br>
+        <div id="footnotes">
+                font by fontenddev | art by norma2d | ideas by ky foo
+                <br>
+                this site is a work in progress... greater things soon...
+        </div>
     </div>
 
 <!-- visual novel character -->
-    <div class="character" id="indexVn">
+    <!-- <div class="character" id="indexVn">
         <div class="icon">
             <img src="/img/images.jpeg">
         </div>
@@ -73,7 +79,7 @@
         <div class="speech" id="indexSpeech">
             Hi :)
         </div>
-    </div>
+    </div> -->
 
 <!-- scripts -->
     <script type="text/javascript">

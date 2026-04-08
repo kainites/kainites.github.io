@@ -56,73 +56,89 @@ function toggleTheme() {
 // typewriter for visual novel character
 if (typeof window.TypeWriter == 'undefined') {
 
-window.TypeWriter = class {
-    constructor(targetElement, lines, options = {}) {
-        this.target = targetElement;
-        this.lines = lines;
-        this.lineIndex = 0;
-        this.charIndex = 0;
-        this.typing = false;
-        this.timeoutId = null;
-        this.speed = options.speed || 50;
-        this.onFinish = options.onFinish || function () {};
-        this.hideOnCompleteSelector = options.hideOnCompleteSelector || null;
-
-        this.target.addEventListener('click', () => this.handleClick());
-    }
-
-    handleClick() {
-        if (this.typing) {
-            clearTimeout(this.timeoutId);
-            this.target.innerHTML = this.lines[this.lineIndex];
+    window.TypeWriter = class {
+        constructor(targetElement, lines, options = {}) {
+            this.target = targetElement;
+            this.lines = lines;
+            this.lineIndex = 0;
+            this.charIndex = 0;
             this.typing = false;
-            this.lineIndex++;
-        } else {
-            if (this.lineIndex < this.lines.length) {
-                this.startTyping();
+            this.timeoutId = null;
+            this.speed = options.speed || 50;
+            this.onFinish = options.onFinish || function () {};
+            this.hideOnCompleteSelector = options.hideOnCompleteSelector || null;
+
+            this.target.addEventListener('click', () => this.handleClick());
+        }
+
+        handleClick() {
+            if (this.typing) {
+                clearTimeout(this.timeoutId);
+                this.target.innerHTML = this.lines[this.lineIndex];
+                this.typing = false;
+                this.lineIndex++;
             } else {
-                if (this.hideOnCompleteSelector) {
-                    const el = document.querySelector(this.hideOnCompleteSelector);
-                    if (el) el.style.display = 'none';
+                if (this.lineIndex < this.lines.length) {
+                    this.startTyping();
+                } else {
+                    if (this.hideOnCompleteSelector) {
+                        const el = document.querySelector(this.hideOnCompleteSelector);
+                        if (el) el.style.display = 'none';
+                    }
+                    this.onFinish();
                 }
-                this.onFinish();
+            }
+        }
+
+        startTyping() {
+            this.typing = true;
+            this.charIndex = 0;
+            this.target.innerHTML = '';
+            this.type();
+        }
+
+        type() {
+            if (this.charIndex < this.lines[this.lineIndex].length) {
+                this.target.innerHTML += this.lines[this.lineIndex].charAt(this.charIndex);
+                this.charIndex++;
+                this.timeoutId = setTimeout(() => this.type(), this.speed);
+            } else {
+                this.typing = false;
+                this.lineIndex++;
             }
         }
     }
-
-    startTyping() {
-        this.typing = true;
-        this.charIndex = 0;
-        this.target.innerHTML = '';
-        this.type();
-    }
-
-    type() {
-        if (this.charIndex < this.lines[this.lineIndex].length) {
-            this.target.innerHTML += this.lines[this.lineIndex].charAt(this.charIndex);
-            this.charIndex++;
-            this.timeoutId = setTimeout(() => this.type(), this.speed);
-        } else {
-            this.typing = false;
-            this.lineIndex++;
-        }
-    }
-}
 }
 
-if (typeof window.indexTypewriter == 'undefined') {
+// if (typeof window.indexTypewriter == 'undefined') {
+//     // typewriter objects
+//     window.indexTypewriter = new window.TypeWriter(
+//         document.getElementById('indexSpeech'), // speech elem
+//         ['My name is KY, welcome to my home world!',
+//         'As you can see, standing on this text box, there\'s a mini me you can use to explore my world. Use WASD or arrow keys to move around.',
+//         'Alternatively, if you\'d like to switch off game mode, you can do so by clicking the icon in the top right corner of the nav bar.'
+//         ],  // lines to type
+//         {
+//             speed: 60,                          // (optional) typing speed in ms
+//             hideOnCompleteSelector: '#indexVn', // (optional) hide this element when done
+//             onFinish: () => {
+//                 console.log('Typing finished!');
+//             }
+//         }
+//     );
+// }
 
-    // typewriter objects
-    window.indexTypewriter = new window.TypeWriter(
-        document.getElementById('indexSpeech'), // speech elem
-        ['My name is KY, welcome to my world! I\'m a student coder and creative based in London and Singapore. I love looking and making pretty things,',
-        'This site acts both as my personal site as well as my portfolio',
-        'As you can see, standing on this text box, there\'s a mini me you can use to explore my world. Use WASD or arrow keys to move around.',
-        'Alternatively, if you\'d like to switch off game mode, you can do so by clicking the icon in the top right corner of the nav bar.'
+if (typeof window.bonusTypewriter == 'undefined') {
+    window.bonusTypewriter = new window.TypeWriter(
+        document.getElementById('bonusSpeech'), // speech elem
+        ['Welcome to a sneak peak of what is to come!',
+        'Featuring: a WASD movable avatar, visual novel character style interaction, and cute characters.',
+        'And of course, an accessibility mode.',
+        'Be excited. I know I am :)'
         ],  // lines to type
         {
             speed: 60,                          // (optional) typing speed in ms
-            hideOnCompleteSelector: '#indexVn', // (optional) hide this element when done
+            hideOnCompleteSelector: '#bonusVn', // (optional) hide this element when done
             onFinish: () => {
                 console.log('Typing finished!');
             }

@@ -20,6 +20,11 @@ body {
   font-size: 3.4vh;
 }
 
+a {
+  color: #f0f0f0;
+  text-decoration: underline dotted 2px;
+}
+
 #stage {
 	margin: 0 auto;
 	padding: 60px 20px 20px;
@@ -31,27 +36,43 @@ body {
   align-content: center;
 }
 
+#footnotes {
+  font-size: 2.5vh;
+  text-align: center;
+}
+
 /* splash screen related: */
 
 #splashscreen {
 	display: none;
-    position:fixed;
-    top:0;
-    left:0;
-    bottom:0;
-    width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  width:100%;
 	height:100%;
-    background-color:#5F5F5F;
+	color: #f0f0f0;
+  background-image: url(../img/SpaceWallpaper3840x1344.png);
+  background-size: cover;
 	z-index: 2;
 	overflow: hidden;
-	justify-content: center;
+	text-align: center;
   align-content: center;
+}
+
+.splashx {
+  display:grid;
+  grid-template-rows: auto auto;
+}
+
+.splashx div {
+  padding: 30px;
 }
 
 #enter {
   padding: 14px 16px;
-  background-color: #5F5F5F;
   border: 1.5mm inset #737373;
+  text-decoration: none;
 }
 
 .fade-out {

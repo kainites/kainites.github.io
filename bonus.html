@@ -14,46 +14,42 @@
 
 <!-- nav -->
     <nav>
+        <a href="/cv.pdf">cv</a>
+        <!-- <a href="misc.html">misc</a> -->
+        <a href="projects.html">projects</a>
+        <a href="index.html">home</a>
+        <!-- <button id="themeButton" onclick="toggleTheme()" 
+        style="background-image: url('/img/gameButton.jpg'); 
+               background-size: cover; 
+               background-repeat: no-repeat; 
+               width: 4em; 
+               height: 4em;">Switch</button> -->
     </nav>
 
 
 <!-- main -->
     <div id="stage">
-        <div id="reversible" class="container">
-            <div class="item">
-                <h3>ABOUT</h3>
-            </div>
-            <div class="item">
-                <h3>EXPERIENCE & EDUCATION</h3>
-            </div>
-            <div class="item">
-                <h3>PROJECTS</h3>
-            </div>
-            <div id="skills" class="item">
-                <h3>SKILLS</h3>
-            </div>
-            <div class="item">
-                <h3>MORE</h3>
-            </div>
+        <div id="footnotes">
+            <a href="index.html" style="text-decoration:none">go home</a>
         </div>
     </div>
 
 <!-- visual novel character -->
-    <div class="character">
+    <div class="character" id="bonusVn">
         <div class="icon">
-            <img src="/img/images.jpeg">
+            <img src="/img/img.jpeg">
         </div>
         <div class="name">
             <h2>KY FOO</h2>
         </div>
-        <div class="speech">
-            Hi there :)
+        <div class="speech" id="bonusSpeech">
+            Hi :)
         </div>
     </div>
 
 <!-- scripts -->
     <script type="text/javascript">
-        sessionStorage.setItem('currentPage', 'more');
+        sessionStorage.setItem('currentPage', 'bonus');
     </script>
     <script id="themeScript" src="js/game.js"></script>
     <script id="initialScript" src="js/initial.js"></script>
