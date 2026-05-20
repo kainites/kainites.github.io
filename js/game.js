@@ -67,11 +67,12 @@ if (typeof window.TypeWriter == 'undefined') {
             this.speed = options.speed || 50;
             this.onFinish = options.onFinish || function () {};
             this.hideOnCompleteSelector = options.hideOnCompleteSelector || null;
-
             this.target.addEventListener('click', () => this.handleClick());
+            console.log(this);
         }
 
         handleClick() {
+            console.log(this.target);
             if (this.typing) {
                 clearTimeout(this.timeoutId);
                 this.target.innerHTML = this.lines[this.lineIndex];
@@ -110,28 +111,37 @@ if (typeof window.TypeWriter == 'undefined') {
     }
 }
 
-// if (typeof window.indexTypewriter == 'undefined') {
-//     // typewriter objects
-//     window.indexTypewriter = new window.TypeWriter(
-//         document.getElementById('indexSpeech'), // speech elem
-//         ['My name is KY, welcome to my home world!',
-//         'As you can see, standing on this text box, there\'s a mini me you can use to explore my world. Use WASD or arrow keys to move around.',
-//         'Alternatively, if you\'d like to switch off game mode, you can do so by clicking the icon in the top right corner of the nav bar.'
-//         ],  // lines to type
-//         {
-//             speed: 60,                          // (optional) typing speed in ms
-//             hideOnCompleteSelector: '#indexVn', // (optional) hide this element when done
-//             onFinish: () => {
-//                 console.log('Typing finished!');
-//             }
-//         }
-//     );
-// }
-
-if (typeof window.bonusTypewriter == 'undefined') {
+if ((window.location.pathname == "/index.html" || window.location.pathname == "/") && typeof window.indexTypewriter == 'undefined' && !sessionStorage.getItem('indexVnShown')) {
+    console.log('location.pathname',  window.location.pathname);
+    console.log("undefined indexTypewriter");
+    console.log("classlist", document.getElementById('indexVn').classList);
+    document.getElementById('indexVn').classList.toggle('hidden');
+    // typewriter objects
+    window.indexTypewriter = new window.TypeWriter(
+        document.getElementById('indexSpeech'), // speech elem
+        ['My name is KY, welcome to my home world!',
+        'As you can see, standing on this text box, there\'s a mini me you can use to explore my world. Use WASD or arrow keys to move around.',
+        'Alternatively, if you\'d like to switch off game mode, you can do so by clicking the icon in the top right corner of the nav bar.'
+        ],  // lines to type
+        {
+            speed: 60,                          // (optional) typing speed in ms
+            hideOnCompleteSelector: '#indexVn', // (optional) hide this element when done
+            onFinish: () => {
+                console.log('Index vn typing finished!');
+            }
+        }
+    );
+    sessionStorage.setItem('indexVnShown', 'true');
+    console.log("fuck");
+}
+ 
+if (window.location.pathname == "/bonus.html" && typeof window.bonusTypewriter == 'undefined' && !sessionStorage.getItem('bonusVnShown')) {
+    console.log('location.pathname',  window.location.pathname);
+    console.log("undefined bonusTypewriter");
+    document.getElementById('bonusVn').classList.toggle('hidden');
     window.bonusTypewriter = new window.TypeWriter(
         document.getElementById('bonusSpeech'), // speech elem
-        ['Welcome to a sneak peak of what is to come!',
+        ['Welcome to a sneak peek of what is to come!',
         'Featuring: a WASD movable avatar, visual novel character style interaction, and cute characters.',
         'And of course, an accessibility mode.',
         'Be excited. I know I am :)'
@@ -140,9 +150,9 @@ if (typeof window.bonusTypewriter == 'undefined') {
             speed: 60,                          // (optional) typing speed in ms
             hideOnCompleteSelector: '#bonusVn', // (optional) hide this element when done
             onFinish: () => {
-                console.log('Typing finished!');
+                console.log('Bonus vn typing finished!');
             }
         }
     );
-
+    sessionStorage.setItem('bonusVnShown', 'true');
 }
